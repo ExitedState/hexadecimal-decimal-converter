@@ -1,0 +1,278 @@
+:root {
+  --background: #f5f7fb;
+  --card: #ffffff;
+  --text: #18202a;
+  --muted: #687386;
+  --border: #dce2ea;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --danger: #dc2626;
+  --code-background: #f7f9fc;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+}
+
+.container {
+  width: min(860px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 64px 0 40px;
+}
+
+header {
+  margin-bottom: 28px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card,
+.result-card,
+.privacy-note {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.card {
+  padding: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 650;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: #fff;
+  color: var(--text);
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 0.95rem;
+  line-height: 1.55;
+
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+textarea::placeholder {
+  color: #9aa4b2;
+}
+
+.hint {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.05s ease;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.primary-button,
+.secondary-button {
+  padding: 10px 18px;
+}
+
+.primary-button {
+  background: var(--primary);
+  color: white;
+}
+
+.primary-button:hover {
+  background: var(--primary-hover);
+}
+
+.secondary-button {
+  background: #eef2f7;
+  color: var(--text);
+}
+
+.secondary-button:hover {
+  background: #e5eaf1;
+}
+
+.error {
+  min-height: 1.3em;
+  margin: 14px 0 0;
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.results {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.result-card {
+  padding: 20px;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.result-label {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 650;
+}
+
+.result-description {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.copy-button {
+  flex-shrink: 0;
+
+  padding: 7px 12px;
+
+  background: #eef2f7;
+  color: var(--text);
+
+  font-size: 0.82rem;
+}
+
+.copy-button:hover {
+  background: #e5eaf1;
+}
+
+code {
+  display: block;
+  width: 100%;
+
+  padding: 13px 14px;
+
+  overflow-wrap: anywhere;
+  word-break: break-all;
+
+  border: 1px solid #e6eaf0;
+  border-radius: 8px;
+
+  background: var(--code-background);
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.privacy-note {
+  margin-top: 20px;
+  padding: 16px 18px;
+
+  color: var(--muted);
+  font-size: 0.87rem;
+  line-height: 1.55;
+}
+
+.privacy-note strong {
+  color: var(--text);
+}
+
+footer {
+  padding-top: 28px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(100% - 20px, 860px);
+    padding-top: 32px;
+  }
+
+  .card,
+  .result-card {
+    padding: 18px;
+  }
+
+  .result-header {
+    align-items: center;
+  }
+}
