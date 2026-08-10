@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Certificate Serial Number Converter</title>
+
+  <meta
+    name="description"
+    content="Convert certificate serial numbers between colon-separated hexadecimal, 0x hexadecimal, and decimal formats."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <h1>Certificate Serial Number Converter</h1>
+      <p class="subtitle">
+        Convert certificate serial numbers between hexadecimal and decimal formats.
+      </p>
+    </header>
+
+    <section class="card">
+      <label for="serialInput">Certificate Serial Number</label>
+
+      <textarea
+        id="serialInput"
+        rows="4"
+        spellcheck="false"
+        placeholder="Example: 33:AB:D4:C6:0D:32:46:01:CE:C3:88:2F:9A:75:52:F5"
+      ></textarea>
+
+      <p class="hint">
+        Accepted formats: colon-separated hex, plain hex, 0x-prefixed hex,
+        space/hyphen-separated hex, or decimal.
+      </p>
+
+      <div class="actions">
+        <button id="convertButton" class="primary-button">
+          Convert
+        </button>
+
+        <button id="clearButton" class="secondary-button">
+          Clear
+        </button>
+      </div>
+
+      <p id="errorMessage" class="error" aria-live="polite"></p>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div class="result-card">
+        <div class="result-header">
+          <div>
+            <span class="result-label">Colon-separated Hexadecimal</span>
+            <span class="result-description">
+              Common certificate serial number display format
+            </span>
+          </div>
+
+          <button
+            class="copy-button"
+            data-copy-target="colonHexOutput"
+          >
+            Copy
+          </button>
+        </div>
+
+        <code id="colonHexOutput"></code>
+      </div>
+
+      <div class="result-card">
+        <div class="result-header">
+          <div>
+            <span class="result-label">Hexadecimal</span>
+            <span class="result-description">
+              Format for forms requiring a 0x prefix
+            </span>
+          </div>
+
+          <button
+            class="copy-button"
+            data-copy-target="hexOutput"
+          >
+            Copy
+          </button>
+        </div>
+
+        <code id="hexOutput"></code>
+      </div>
+
+      <div class="result-card">
+        <div class="result-header">
+          <div>
+            <span class="result-label">Decimal</span>
+            <span class="result-description">
+              Base-10 representation
+            </span>
+          </div>
+
+          <button
+            class="copy-button"
+            data-copy-target="decimalOutput"
+          >
+            Copy
+          </button>
+        </div>
+
+        <code id="decimalOutput"></code>
+      </div>
+    </section>
+
+    <section class="privacy-note">
+      <strong>Privacy:</strong>
+      All conversions are performed locally in your browser.
+      No certificate serial numbers are uploaded or sent anywhere.
+    </section>
+
+    <footer>
+      <p>Client-side certificate serial number utility.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
